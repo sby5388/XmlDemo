@@ -23,10 +23,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
-    implementation project(path: ':CommonView')
+    //implementation project(path: ':CommonView')
+    implementation 'com.github.sby5388:CommonDemoView:1.2'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'

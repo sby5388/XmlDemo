@@ -1,5 +1,5 @@
 include ':app'
 rootProject.name = "Xml解析demo"
 
-include ":CommonView"
-project(':CommonView').projectDir = new File(settingsDir, "../DemoView/CommonView")
+//include ":CommonView"
+//project(':CommonView').projectDir = new File(settingsDir, "../DemoView/CommonView")
