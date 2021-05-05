@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -105,6 +106,13 @@ public abstract class BaseXmlFragment extends Fragment {
         }
         listView.setEmptyView(empty);
         listView.setAdapter(mBookAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                final Book item = mBookAdapter.getItem(position);
+                Toast.makeText(requireContext(), item.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
         queryXml();
     }
 
