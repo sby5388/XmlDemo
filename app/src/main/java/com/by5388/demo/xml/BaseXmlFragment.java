@@ -98,8 +98,8 @@ public abstract class BaseXmlFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        final ListView listView = (ListView) view.findViewById(android.R.id.list);
-        final TextView empty = (TextView) view.findViewById(android.R.id.empty);
+        final ListView listView = view.findViewById(android.R.id.list);
+        final TextView empty = view.findViewById(android.R.id.empty);
         final CharSequence title = requireActivity().getTitle();
         if (title != null) {
             empty.setText(title);
@@ -119,9 +119,9 @@ public abstract class BaseXmlFragment extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        final XmlApplication application = XmlApplication.getApplication();
-        final Handler workHandler = application.getWorkHandler();
-        workHandler.removeCallbacks(mRunnable);
+//        final XmlApplication application = XmlApplication.getApplication();
+//        final Handler workHandler = application.getWorkHandler();
+//        workHandler.removeCallbacks(mRunnable);
         mHandler.removeCallbacksAndMessages(null);
     }
 }

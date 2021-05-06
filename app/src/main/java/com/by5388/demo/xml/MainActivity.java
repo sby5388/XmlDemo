@@ -1,8 +1,6 @@
 package com.by5388.demo.xml;
 
 
-import android.os.Handler;
-
 import com.by5388.demo.common.CommonMainActivity;
 
 import java.util.Collections;
@@ -23,8 +21,11 @@ public class MainActivity extends CommonMainActivity {
     protected void onDestroy() {
         super.onDestroy();
         final XmlApplication application = XmlApplication.getApplication();
-        final Handler workHandler = application.getWorkHandler();
-        workHandler.removeCallbacksAndMessages(null);
-        application.getHandlerThread().quitSafely();
+//        application.onDestroy();
+//        Handler workHandler = application.getWorkHandler();
+//        workHandler.removeCallbacksAndMessages(null);
+////        application.getHandlerThread().quitSafely();
+//        workHandler.getLooper().quitSafely();
+//        workHandler = null;
     }
 }
